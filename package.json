@@ -1,0 +1,9 @@
+{
+  "name": "migrate-wordpress",
+  "scripts": {
+    "convert": "node convert-post-json-to-html.js"
+  },
+  "dependencies": {
+    "clean-html": "^1.5.0"
+  }
+}
