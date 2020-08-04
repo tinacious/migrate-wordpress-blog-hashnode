@@ -1,9 +1,11 @@
 {
   "name": "migrate-wordpress",
   "scripts": {
-    "convert": "node convert-post-json-to-html.js"
+    "cleanse": "node perform-cleanse.js"
   },
   "dependencies": {
-    "clean-html": "^1.5.0"
+    "graphql-request": "^2.0.0",
+    "html-attributes-remover": "^1.0.4",
+    "turndown": "^6.0.0"
   }
 }

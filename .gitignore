@@ -1,2 +1,4 @@
 node_modules
 posts.json
+posts/cleaned.json
+uploads/*
