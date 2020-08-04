@@ -1,10 +1,13 @@
 {
   "name": "migrate-wordpress",
+  "version": "0.1.0",
   "scripts": {
-    "cleanse": "node perform-cleanse.js"
+    "cleanse": "node scripts/perform-cleanse.js",
+    "migrate": "node scripts/perform-migration.js"
   },
   "dependencies": {
-    "graphql-request": "^2.0.0",
+    "dotenv": "^8.2.0",
+    "graphql-request": "1.8.2",
     "html-attributes-remover": "^1.0.4",
     "turndown": "^6.0.0"
   }

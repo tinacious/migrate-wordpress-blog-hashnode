@@ -9,6 +9,7 @@ const imgAttributeRemover = new AttributeRemover({
 
 const Turndown = require('turndown')
 const turndownService = new Turndown({
+  codeBlockStyle: 'fenced',
   headingStyle: 'atx',
   hr: '---',
   bulletListMarker: '-',
@@ -24,10 +25,10 @@ const turndownService = new Turndown({
  * Some constants you'll need to change
  */
 // You need a posts.json file at the root
-const EXISTING_POSTS = require('./posts.json')
+const EXISTING_POSTS = require('../posts.json')
 const OLD_MEDIA_PATH = 'http://tinaciousdesign.com/wp-content/uploads/'
 const NEW_MEDIA_PATH = 'https://tinaciousdesign.imfast.io/'
-const NEW_POSTS_PATH = './posts/cleaned.json'
+const NEW_POSTS_PATH = '../posts/cleaned.json'
 
 
 const publishedPosts = EXISTING_POSTS.filter((post) => !!post.Date && post.Permalink.indexOf('?p=') === -1)
@@ -81,6 +82,7 @@ const addPostToPostData = (post, keyname) => {
     excerpt: post.Excerpt,
     content: post.Content,
     slug: keyname,
+    url: post.Permalink,
     date: new Date(post.Date).toISOString(),
   })
 }
@@ -100,16 +102,38 @@ const persistPostData = (data) => {
 const clone = (o) => JSON.parse(JSON.stringify(o))
 
 
-publishedPosts.forEach((oldPost) => {
-  // Transformations
-  let post = clone(oldPost)
-  post = replaceAllOldUrlsWithNewUrls(post)
-  post = cleanPostHtml(post)
-  post = convertPostHtmlToMarkdown(post)
+const sortTransformedPost = (postA, postB) => {
+  if (postA.date < postB.date) {
+    return -1
+  }
 
-  // Persistence
-  const filename = post.Permalink.split('/').reverse()[1];
-  addPostToPostData(post, filename)
-})
+  if (postA.date > postB.date) {
+    return 1;
+  }
 
-persistPostData(postData)
+  return 0;
+}
+
+
+/**
+ * Main
+ */
+function main () {
+  publishedPosts.forEach((oldPost) => {
+    // Transformations
+    let post = clone(oldPost)
+    post = replaceAllOldUrlsWithNewUrls(post)
+    post = cleanPostHtml(post)
+    post = convertPostHtmlToMarkdown(post)
+
+    // Persistence
+    const filename = post.Permalink.split('/').reverse()[1];
+    addPostToPostData(post, filename)
+  })
+
+  const sortedPostData = postData.sort(sortTransformedPost)
+  persistPostData(sortedPostData)
+}
+
+
+main();

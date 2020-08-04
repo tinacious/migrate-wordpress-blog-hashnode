@@ -1,0 +1,21 @@
+mutation createPublicationStory(
+  $input: CreateStoryInput!,
+  $hideFromHashnodeFeed: Boolean,
+  $publicationId: String!
+) {
+  createPublicationStory(
+    input: $input,
+    hideFromHashnodeFeed: $hideFromHashnodeFeed,
+    publicationId: $publicationId
+  ) {
+    success
+    code
+    message
+    post {
+      cuid
+      slug
+      title
+      contentMarkdown
+    }
+  }
+}

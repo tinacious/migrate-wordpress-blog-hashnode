@@ -16,8 +16,23 @@ npm install
 
 ### Clean the posts
 
-Runs the post cleanse, cleaning up gross HTML attributes and converting to Markdown.
+This operation is like drinking a kale and cucumber smoothie. It processes the posts in `./posts.json` and performs the following actions:
+
+- removes dirty attributes from content HTML
+- converts post content to Markdown
+- writes a new file in `./posts/cleaned.json`
+
 
 ```
 npm run cleanse
 ```
+
+### Upload new posts
+
+Set the required Hashnode secrets as environment variables in the `.env` file. See `.env.sample` for an example.
+
+```
+mv .env.sample .env
+```
+
+Open the `.env` file and edit it.
