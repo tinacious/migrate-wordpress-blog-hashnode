@@ -4,7 +4,13 @@ This is a set of scripts and instructions to facilitate migrating a blog from Wo
 
 ## Usage
 
-Use the following guide to hold your hand through this process: TODO
+Use the following guide as a walkthrough for this process:
+
+[Migrating my blog from WordPress to Hashnode](https://blog.tinaciousdesign.com/migrating-my-blog-from-wordpress-to-hashnode-ckdgzbasn00zcdns1bmm2dj76)
+
+
+
+## Scripts
 
 Install dependencies:
 
@@ -12,7 +18,16 @@ Install dependencies:
 npm install
 ```
 
-## Scripts
+### Set up your environment variables
+
+Set the required Hashnode secrets as environment variables in the `.env` file. See `.env.sample` for an example.
+
+```
+mv .env.sample .env
+```
+
+Open the `.env` file and edit it.
+
 
 ### Clean the posts
 
@@ -27,12 +42,10 @@ This operation is like drinking a kale and cucumber smoothie. It processes the p
 npm run cleanse
 ```
 
-### Upload new posts
+### Publish new posts
 
-Set the required Hashnode secrets as environment variables in the `.env` file. See `.env.sample` for an example.
+Once your posts are ready to be published, run the following script.
 
 ```
-mv .env.sample .env
+npm run migrate
 ```
-
-Open the `.env` file and edit it.
