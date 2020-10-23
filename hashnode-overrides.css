@@ -1,0 +1,189 @@
+/* blue: #00bfff */
+/* turquoise: #00CED1 */
+/* green: #00d364 */
+/* purple: #c6f */
+/* yellow: #fc6 */
+
+.mode-dark .dark\:bg-brand-dark-grey-900 {
+  background-color: #1c1c26;
+}
+
+::selection {
+  background-color:  rgba(255, 51, 153, 0.3);
+}
+
+/* Header */
+.blog-header {
+  border-bottom: 4px solid rgb(255, 51, 153);
+}
+
+.blog-sub-header {
+  padding-bottom: 6px;
+}
+
+.blog-settings,
+.blog-theme-switcher {
+}
+
+.blog-sub-header-nav a {
+  background: #f39;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  padding: 0;
+  color: #f39;
+  position: relative;
+  height: 2em;
+  width: 60px;
+}
+
+.blog-sub-header-nav a:hover {
+  background: #f39;
+}
+
+.blog-sub-header-nav a:after {
+  content: "Blog";
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.blog-social-media-section a {
+  padding: 8px;
+  margin: 8px 3px;
+  border-radius: 50%;
+  background: #f39;
+  opacity: 1;
+}
+
+.blog-social-media-section a:hover {
+  background: #f39;
+}
+
+/* Body links */
+.prose a {
+  color: #f39;
+}
+.prose a:hover {
+  color: #00d364;
+}
+.prose pre {
+  background-color: #1c1c26;
+}
+
+.button-primary {
+  color: #f39;
+  border-color: #f39;
+}
+.button-primary:hover {
+  background-color: #fff;
+}
+
+
+/* Highlight.js */
+/* Comment */
+.hljs-comment,
+.hljs-quote {
+  color: #686889;
+}
+
+/* Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-deletion {
+  color: #f39;
+}
+
+/* Magenta */
+.hljs-number,
+.hljs-literal {
+  color: #CC66FF;
+}
+
+/* Orange */
+.hljs-params,
+.hljs-selector-class,
+.hljs-string {
+  color: #FFCC66;
+}
+
+/* Turquoise */
+.hljs-subst,
+.hljs-regexp,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-function {
+  color: #00ced1;
+}
+
+/* Green */
+.hljs-class,
+.hljs-symbol,
+.hljs-title,
+.hljs-bullet,
+.hljs-attr,
+.hljs-attribute,
+.hljs-addition {
+  color: #00D364;
+}
+
+/* Blue */
+.hljs-doctag,
+.hljs-type,
+.hljs-link,
+.hljs-meta,
+.hljs-section {
+  color: #00BFFF;
+  /* color: #00D364; */
+}
+
+/* Pink */
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #f39;
+}
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  background: #1c1c26;
+  color: #B3B3D4;
+  padding: 0.5em;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+@media screen and (-ms-high-contrast: active) {
+  .hljs-addition,
+  .hljs-attr,
+  .hljs-attribute,
+  .hljs-built_in,
+  .hljs-bullet,
+  .hljs-comment,
+  .hljs-link,
+  .hljs-literal,
+  .hljs-meta,
+  .hljs-number,
+  .hljs-params,
+  .hljs-string,
+  .hljs-symbol,
+  .hljs-type,
+  .hljs-quote {
+    color: highlight;
+  }
+
+  .hljs-keyword,
+  .hljs-selector-tag {
+    font-weight: bold;
+  }
+}
