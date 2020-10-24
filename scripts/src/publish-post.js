@@ -5,11 +5,11 @@ const Path = require('path')
 const client = require('./graphql-client');
 
 const query = Fs.readFileSync(
-  Path.join(__dirname, 'upload.mutation.gql'),
+  Path.join(__dirname, 'create-post.mutation.gql'),
   'utf-8'
 )
 
-const publishPost = (post) => {
+const publishPost = async (post) => {
   const variables = {
     hideFromHashnodeFeed: true,
     publicationId: process.env.HASHNODE_PUBLICATION_ID,

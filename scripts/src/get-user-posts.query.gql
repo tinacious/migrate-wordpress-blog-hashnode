@@ -8,6 +8,11 @@ query getUserPosts($page: Int!) {
         title
         contentMarkdown
         slug
+        tags {
+          _id
+          name
+          slug
+        }
       }
     }
   }

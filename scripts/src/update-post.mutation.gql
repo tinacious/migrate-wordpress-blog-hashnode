@@ -1,0 +1,5 @@
+mutation updatePost($postId: String!, $input: UpdateStoryInput!) {
+  updateStory() {
+
+  }
+}
