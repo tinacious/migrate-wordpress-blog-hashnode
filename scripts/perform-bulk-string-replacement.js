@@ -15,6 +15,8 @@ const replaceStringForPostsInPage = (posts) => {
   const oldMatch = new RegExp(OLD_STRING, 'g');
 
   return posts
+    // stub until Hashnode fixes their bug
+    .filter(({ tags }) => tags.length === 0)
     .filter(({ contentMarkdown }) =>
       contentMarkdown !== contentMarkdown.replace(oldMatch, NEW_STRING)
     )
@@ -26,7 +28,7 @@ const replaceStringForPostsInPage = (posts) => {
 
 // Pagination
 const DEFAULT_HASHNODE_PAGE_SIZE = 6;
-let page = 6; // TODO: 0
+let page = 0; // TODO: 0
 let currentPageSize = 0;
 
 
@@ -44,9 +46,8 @@ const performBulkStringReplacement = async () => {
     updatedPosts.forEach(async (post) => {
       console.log(`Updating post: ${post.title}`);
 
-      console.log(post.contentMarkdown)
-      const updated = await updatePost(post);
-      console.log(updated)
+      const response = await updatePost(post);
+      console.log(`✅ ${post.title}`, response);
     });
 
     page++;

@@ -1,5 +1,6 @@
 mutation updatePost($postId: String!, $input: UpdateStoryInput!) {
-  updateStory() {
-
+  updateStory(postId: $postId, input: $input) {
+    success
+    message
   }
 }

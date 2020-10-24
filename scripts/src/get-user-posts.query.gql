@@ -9,7 +9,7 @@ query getUserPosts($page: Int!) {
         contentMarkdown
         slug
         tags {
-          _id
+          # _id
           name
           slug
         }

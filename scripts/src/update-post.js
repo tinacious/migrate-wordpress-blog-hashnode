@@ -13,7 +13,12 @@ const query = Fs.readFileSync(
 const updatePost = async (post) => {
   const variables = {
     postId: post._id,
-    input: post,
+    input: {
+      title: post.title,
+      slug: post.slug,
+      contentMarkdown: post.contentMarkdown,
+      tags: [], // TODO: replace once the Hashnode bug is fixed.
+    },
   }
 
   return client.request(query, variables)
