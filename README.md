@@ -1,3 +1,8 @@
+# Hashnode blog scripts
+
+Scripts for automating blog maintenance.
+
+
 - [Bulk string replacement](#bulk-string-replacement)
   - [Usage](#usage)
 - [WordPress-Hashnode Migrator](#wordpress-hashnode-migrator)
@@ -6,10 +11,6 @@
     - [Set up your environment variables](#set-up-your-environment-variables)
     - [Clean the posts](#clean-the-posts)
     - [Publish new posts](#publish-new-posts)
-
-# Hashnode blog scripts
-
-Scripts for automating blog maintenance.
 
 
 ## Bulk string replacement
