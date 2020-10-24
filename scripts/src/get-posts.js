@@ -8,17 +8,13 @@ const query = Fs.readFileSync(
   'utf-8'
 )
 
-const getPosts = (page = 0) => {
+const getPosts = async (page = 0) => {
   const variables = {
     page
   };
 
   return client.request(query, variables)
-    .then((data) => {
-      console.log('✅ Success!')
-      console.log(data)
-      return data.user.publication.posts;
-    })
+    .then((data) =>  data.user.publication.posts)
     .catch((err) => {
       console.error('🚨 Error!')
       console.error(err)
