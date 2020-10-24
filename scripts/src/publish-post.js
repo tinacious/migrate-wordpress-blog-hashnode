@@ -2,13 +2,7 @@ require('dotenv').config()
 
 const Fs = require('fs')
 const Path = require('path')
-const { GraphQLClient } = require('graphql-request')
-
-const client = new GraphQLClient('https://api.hashnode.com', {
-  headers: {
-    Authorization: process.env.HASHNODE_API_KEY
-  }
-})
+const client = require('./graphql-client');
 
 const query = Fs.readFileSync(
   Path.join(__dirname, 'upload.mutation.gql'),

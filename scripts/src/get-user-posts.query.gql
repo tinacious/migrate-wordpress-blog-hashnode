@@ -1,0 +1,14 @@
+query getUserPosts($page: Int!) {
+  user(username: "tinaciousdesign") {
+    publication {
+      _id
+      title
+      posts(page: $page) {
+        _id
+        title
+        contentMarkdown
+        slug
+      }
+    }
+  }
+}

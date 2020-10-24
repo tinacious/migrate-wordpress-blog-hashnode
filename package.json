@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "cleanse": "node scripts/perform-cleanse.js",
+    "replace": "node scripts/perform-bulk-string-replacement.js",
     "migrate": "node scripts/perform-migration.js"
   },
   "dependencies": {
